@@ -1,0 +1,3 @@
+select c.customer_id, m.meter_id , max(m.end_unit) - min(m.start_unit) total_usage from customer c, meter_usage m where c.meter_id =m.meter_id group by customer_id;
+
+select start_time , end_time from cycle cy where cy.cycle_id = ( select c.cycle_id from customer c where c.customer_id = 2 ) and cy.month=6
